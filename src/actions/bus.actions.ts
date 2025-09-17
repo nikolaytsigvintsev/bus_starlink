@@ -6,7 +6,7 @@ import { prisma } from "@/utils/prisma";
 
 
 
-export const registerBus = async (formData: IFormDataBusCreate): Promise<IBus[] | { error: string }> => {
+export const registerBus = async (formData: IFormDataBusCreate): Promise<IBus | { error: string }> => {
     const { model, busNumber, description, route } = formData;
 
     try {
@@ -51,7 +51,7 @@ export const getBuses = async (): Promise<IBus[] | { error: string }> => {
     }
 }
 
-export const deleteBus = async (id: string): Promise<IBus[] | { error: string }> => {
+export const deleteBus = async (id: string): Promise<IBus | { error: string }> => {
     try {
         const bus = await prisma.bus.delete({
             where: { id },

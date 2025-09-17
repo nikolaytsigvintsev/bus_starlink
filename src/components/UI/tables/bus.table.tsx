@@ -4,7 +4,7 @@ import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Toolti
 import { useBusStore } from "@/store/bus.store";
 import { useEffect } from "react";
 
-export const EyeIcon = (props) => {
+export const EyeIcon = (props: any) => {
     return (
         <svg
             aria-hidden="true"
@@ -34,7 +34,7 @@ export const EyeIcon = (props) => {
     );
 };
 
-export const DeleteIcon = (props) => {
+export const DeleteIcon = (props: any) => {
     return (
         <svg
             aria-hidden="true"
@@ -85,7 +85,7 @@ export const DeleteIcon = (props) => {
     );
 };
 
-export const EditIcon = (props) => {
+export const EditIcon = (props: any) => {
     return (
         <svg
             aria-hidden="true"

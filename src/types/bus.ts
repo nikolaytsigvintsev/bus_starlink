@@ -1,9 +1,9 @@
 export interface IBus {
-    id?: string;
+    id: string;
     model: string;
     busNumber: string;
-    description: string;
-    route: string;
+    description: string | null;
+    route: string | null;
     createdAt?: Date;
     updatedAt?: Date;
 }
