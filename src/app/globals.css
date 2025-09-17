@@ -1,8 +1,13 @@
 @import "tailwindcss";
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --icon-color: #171717;
 }
 
 @theme inline {
@@ -10,12 +15,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-icon: var(--icon-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --icon-color: #ededed;
   }
 }
 
@@ -23,4 +30,34 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon {
+  color: var(--icon-color);
+  /* используется в SVG как currentColor */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  color: inherit;
+  padding: 0.5rem 0.1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  color: #0070f3;
+  background: #f0f4ff;
+}
+
+.nav-link-active {
+  color: #0070f3;
+  background: #e6f0ff;
+  border: 2px solid #0070f3;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.08);
 }
